@@ -1,0 +1,19 @@
+# Smithery configuration for 24htrack-mcp
+startCommand:
+  type: stdio
+  configSchema:
+    type: object
+    properties:
+      TRACK24H_API_KEY:
+        type: string
+        description: "Your 24hTrack API key. Get one at https://www.24htrack.com → Developer Settings"
+    required:
+      - TRACK24H_API_KEY
+  commandFunction: |-
+    (config) => ({
+      command: 'npx',
+      args: ['-y', '24htrack-mcp'],
+      env: {
+        TRACK24H_API_KEY: config.TRACK24H_API_KEY
+      }
+    })

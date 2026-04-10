@@ -1,0 +1,43 @@
+{
+  "name": "24htrack-mcp",
+  "version": "1.0.0",
+  "description": "MCP server for 24hTrack — universal package tracking across 30+ carriers (USPS, UPS, FedEx, DHL, etc.)",
+  "keywords": [
+    "mcp",
+    "tracking",
+    "package-tracking",
+    "usps",
+    "ups",
+    "fedex",
+    "dhl",
+    "shipping",
+    "carrier",
+    "delivery",
+    "24htrack",
+    "model-context-protocol"
+  ],
+  "author": "24hTrack <support@24htrack.com>",
+  "license": "MIT",
+  "homepage": "https://www.24htrack.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ngkienmkqn/24htrack-mcp"
+  },
+  "type": "module",
+  "main": "index.js",
+  "bin": {
+    "24htrack-mcp": "./bin/cli.js"
+  },
+  "files": [
+    "index.js",
+    "bin/",
+    "README.md"
+  ],
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.12.1",
+    "zod": "^3.23.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
