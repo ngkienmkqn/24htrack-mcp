@@ -12,12 +12,15 @@ const API_BASE = 'https://api.24htrack.com'
 export function create24hTrackServer(apiKey) {
     const server = new McpServer({
         name: '24htrack',
-        version: '1.0.0',
-        description: 'Universal package tracking across 30+ carriers (USPS, UPS, FedEx, DHL, Evri, Yanwen, 4PX, etc.)',
+        version: '1.0.1',
+        description: 'Universal package tracking across 3,200+ carriers (USPS, UPS, FedEx, DHL, China Post, UniUni, SpeedX, etc.) with automatic carrier detection',
     })
 
     // ─── Helper: API call ────────────────────────────────────
     async function apiCall(method, path, body) {
+        if (!apiKey) {
+            throw new Error('TRACK24H_API_KEY is not configured. Get a free API key at https://www.24htrack.com (Developer Settings) and set it in your MCP config, then retry.')
+        }
         const url = `${API_BASE}${path}`
         const opts = {
             method,
@@ -229,12 +232,13 @@ export async function main() {
     const apiKey = process.env.TRACK24H_API_KEY || process.env.API_KEY
 
     if (!apiKey) {
-        console.error('Error: Set TRACK24H_API_KEY environment variable')
+        // Vẫn start để client introspect được tool list (Glama/registry health
+        // checks chạy không key) — tool call sẽ trả lỗi hướng dẫn lấy key
+        console.error('Warning: TRACK24H_API_KEY is not set — tools will return an auth error until it is configured.')
         console.error('Get your API key at https://www.24htrack.com → Developer Settings')
-        process.exit(1)
     }
 
-    const server = create24hTrackServer(apiKey)
+    const server = create24hTrackServer(apiKey || '')
     const transport = new StdioServerTransport()
     await server.connect(transport)
 }
