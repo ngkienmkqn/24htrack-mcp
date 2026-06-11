@@ -1,6 +1,6 @@
 # 24hTrack MCP Server
 
-Universal package tracking for AI agents via [Model Context Protocol](https://modelcontextprotocol.io). Track packages across **30+ carriers** including USPS, UPS, FedEx, DHL, Evri, Yanwen, 4PX, and more.
+Universal package tracking for AI agents via [Model Context Protocol](https://modelcontextprotocol.io). Track packages across **3,200+ carriers** including USPS, UPS, FedEx, DHL, China Post, Yanwen, YunExpress, UniUni, SpeedX, Evri, 4PX, and more — with automatic carrier detection, so agents can paste any tracking number and get a real-time event timeline.
 
 ## Quick Setup
 

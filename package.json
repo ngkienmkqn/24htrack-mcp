@@ -1,11 +1,16 @@
 {
   "name": "24htrack-mcp",
-  "version": "1.0.0",
-  "description": "MCP server for 24hTrack — universal package tracking across 30+ carriers (USPS, UPS, FedEx, DHL, etc.)",
+  "version": "1.0.1",
+  "description": "MCP server for 24hTrack — track packages across 3,200+ carriers (USPS, UPS, FedEx, DHL, China Post, UniUni, SpeedX and more). Multi-carrier tracking with auto carrier detection for AI agents.",
+  "mcpName": "io.github.ngkienmkqn/24htrack-mcp",
   "keywords": [
     "mcp",
+    "mcp-server",
     "tracking",
     "package-tracking",
+    "parcel-tracking",
+    "multi-carrier-tracking",
+    "track-package",
     "usps",
     "ups",
     "fedex",
@@ -14,7 +19,9 @@
     "carrier",
     "delivery",
     "24htrack",
-    "model-context-protocol"
+    "model-context-protocol",
+    "ai-agents",
+    "claude"
   ],
   "author": "24hTrack <support@24htrack.com>",
   "license": "MIT",
